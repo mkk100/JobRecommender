@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommender</title>
-    <script src="script.js"></script>
 </head>
-
 <body>
-    <div>
-        <input id = "input" value="">
-    </div>
-    <button id = "submit">Submit</button>
-    <p id = "output"></p>
-</body>
+    <h1>Recommender</h1>
+    <form>
+        <label for="prompt">Enter your prompt:</label>
+        <input type="text" id="prompt" name="prompt">
+        <button type="button" id="submit-btn">Submit</button>
+    </form>
+    <div id="output"></div>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="recommender.js"></script>
+</body>
 </html>

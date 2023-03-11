@@ -1,27 +1,33 @@
-const axios = require("axios");
-require("dotenv").config();
-const apiKey = process.env.KEY;
-const client = axios.create({
-    headers: {
-        Authorization: "Bearer " + apiKey,
-    },
-});
+const apiKey = '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';
+const apiUrl = 'https://api.openai.com/v1/completions';
 
-const button = document.getElementById('submit')
-button.onclick = function () {
-    const params = {
-        prompt: document.getElementById('input').innerHTML,
-        model: "text-davinci-003",
-        max_tokens: 1000,
-        temperature: 0.5,
-    };
+const promptInput = document.getElementById('prompt');
+const submitBtn = document.getElementById('submit-btn');
+const outputDiv = document.getElementById('output');
 
-    client.post("https://api.openai.com/v1/completions", params)
-        .then((result) => {
-            document.getElementById('output').value = result.data[0].choices
-            console.log(result.data[0].choices)
-        })
-        .catch((err) => {
-            console.log(err);
+submitBtn.addEventListener('click', async () => {
+    const response = axios.create({
+        headers: {
+            Authorization: "Bearer " + apiKey,
+        },
         });
-}
+    const prompt = promptInput.value
+    if (!prompt) {
+        outputDiv.textContent = 'Please enter a prompt.';
+        return;
+    }
+
+    try {
+        const result = await response.post(apiUrl, {
+            prompt: prompt,
+            model: "text-davinci-003",
+            max_tokens: 300,
+            temperature: 0.5,
+        });
+
+        const outputText = result.data.choices[0].text;
+        outputDiv.textContent = outputText;
+    } catch (error) {
+        outputDiv.textContent = `Error: ${error.message}`;
+    }
+});
