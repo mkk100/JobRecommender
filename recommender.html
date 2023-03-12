@@ -1,19 +1,15 @@
+Copy code
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Recommender</title>
+	<title>Accessing local storage value in HTML file</title>
 </head>
 <body>
-    <h1>Recommender</h1>
-    <form>
-        <label for="prompt">Enter your prompt:</label>
-        <input type="text" id="prompt" name="prompt">
-        <button type="button" id="submit-btn">Submit</button>
-    </form>
-    <div id="output"></div>
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="recommender.js"></script>
+	<script>
+		// Retrieve the stored value from the local storage
+		var storedValue = localStorage.getItem("value");
+		// Display the retrieved value on the HTML page
+		document.write(storedValue);
+	</script>
 </body>
 </html>
