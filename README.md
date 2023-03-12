@@ -8,6 +8,7 @@ Job Recommender is a machine learning-based system that recommends job listings 
 - [Prerequisites](#prerequisites)
 - [Contributing](#contributing)
 - [License](#license)
+- [Future Work](#future-work)
 - [Contributors](#contributors)
 - [Acknowledgements](#acknowledgements)
 
@@ -33,6 +34,19 @@ If you would like to contribute to Job Recommender, you are welcome to submit a 
 ## License
 
 Job Recommender is released under the MIT License. See the LICENSE file for details.
+
+## Future Work
+
+- Implement more advanced machine learning algorithms to improve the accuracy of the job recommendations.
+- Allow users to provide additional information such as their location and preferred industry to improve the relevance of the job recommendations.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Axios
+- OpenAI GPT-3
 
 ## Contributors
 
