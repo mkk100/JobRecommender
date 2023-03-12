@@ -1,185 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Skills Checklist</title>
-	<style>
-	body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F2F2F2;
-    }
-    
-    h1 {
-    text-align: center;
-    color: #333333;
-    margin-top: 30px;
-    }
-    
-    table {
-    margin: 30px auto;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    thead {
-    background-color: #333333;
-    color: #FFFFFF;
-    }
-    
-    th, td {
-    padding: 10px;
-    border: 1px solid #CCCCCC;
-    text-align: left;
-    }
-    
-    th {
-    text-align: center;
-    }
-    
-    label em {
-    font-size: 12px;
-    color: #999999;
-    font-style: normal;
-    }
-    
-    
-    input[type="checkbox"] {
-    transform: scale(1.5);
-    margin-right: 5px;
-    }
-    
-    input[type="checkbox"]:hover {
-    cursor: pointer;
-    }
-    
-    input[type="checkbox"]:focus {
-    outline: none;
-    }
-      
-    input[type="checkbox"]:checked:focus + label:before {
-    text-shadow: 0 0 5px rgba(119, 179, 0, 0.4);
-    }
-    
-    input[type="checkbox"]:disabled {
-    cursor: not-allowed;
-    }
-    
-    input[type="checkbox"]:disabled + label {
-    color: #aaaaaa;
-    }
-    
-    input[type="checkbox"]:disabled + label:before {
-    color: #cccccc;
-    }
-    
-    input[type="checkbox"][id^="comm"], input[type="checkbox"][id^="problem"], input[type="checkbox"][id^="teamwork"], input[type="checkbox"][id^="technical"], input[type="checkbox"][id^="soft"] {
-    margin-top: 10px;
-    }
-    
-    button {
-        display: block;
-        margin: 20px auto;
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
+	<link rel="stylesheet" href="styles.css">
+	<script src="app.js"></script>
 
-    button:hover {
-        background-color: #3e8e41;
-    }
-
-    p {
-        font-size: 1.2em;
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        color: #444;
-        line-height: 1.5;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-		#loading {
-    			display: none;
-    			position: fixed;
-   			z-index: 9999;  
-    			top: 0;
-    			left: 0;
-    			height: 100%;
-    			width: 100%;
-    			background-color: rgba(255, 255, 255, 0.8);
-	}
-	#loading-message {
-    		position: absolute;
-    		top: 50%;
-    		left: 50%;
-    		transform: translate(-50%, -50%);
-	}
-	</style>
-	<script language="JavaScript">
-		function communication(source) {
-			checkboxes = document.getElementsByName('comm');
-			for (var i = 0, n = checkboxes.length; i < n; i++) {
-				checkboxes[i].checked = source.checked;
-			}
-		}
-	</script>
-	<script language="JavaScript">
-		function problem_solving(source) {
-			checkboxes = document.getElementsByName('problem');
-			for (var i = 0, n = checkboxes.length; i < n; i++) {
-				checkboxes[i].checked = source.checked;
-			}
-		}
-	</script>
-	
-	<script language="JavaScript">
-		function teamwork(source) {
-			checkboxes = document.getElementsByName('teamwork');
-			for (var i = 0, n = checkboxes.length; i < n; i++) {
-				checkboxes[i].checked = source.checked;
-			}
-		}
-	</script>
-	
-	<script language="JavaScript">
-		function technical(source) {
-			checkboxes = document.getElementsByName('technical');
-			for (var i = 0, n = checkboxes.length; i < n; i++) {
-				checkboxes[i].checked = source.checked;
-			}
-		}
-	</script>
-	
-	
-	<script language="JavaScript">
-		function soft(source) {
-			checkboxes = document.getElementsByName('soft');
-			for (var i = 0, n = checkboxes.length; i < n; i++) {
-				checkboxes[i].checked = source.checked;
-			}
-		}
-	</script>
-	
-	<script language="JavaScript">
-			function showLoadingMessage(){
-   			 document.getElementById("loading").style.display = "block";
-			}
-	</script>
-
-	
 </head>
-
 <body>
-	<p><em>This application will find the suitable job opportunities according to your skills and interests</em></p>
 	<h1>Skills Checklist</h1>
 	<form onSubmit="showLoadingMessage()">
 	<table>
@@ -191,105 +18,104 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td><label>Communication <em>(Click to Select all skills)<input type="checkbox"
-								onClick="communication(this)" /><br /></td>
+				<td><label>Communication <em>(Click to Select all skills)<input type="checkbox" onclick="selectAll(this, 'comm')"/><br/></td>
 				<td>
-					<input type="checkbox" id="verbal" value="verbal communication" name="comm">
+					<input type="checkbox" id="verbal" value="verbal" name="comm">
 					<label for="verbal">Verbal communication</label><br>
-					<input type="checkbox" id="written" value="written communication" name="comm">
+					<input type="checkbox" id="written" value="verbal" name="comm">
 					<label for="written">Written communication</label><br>
-					<input type="checkbox" id="listening" value="listening communication" name="comm">
+					<input type="checkbox" id="listening" value="verbal" name="comm">
 					<label for="listening">Active listening</label><br>
-					<input type="checkbox" id="negotiation" value="negotiation" name="comm">
+					<input type="checkbox" id="negotiation" value="verbal" name="comm">
 					<label for="negotiation">Negotiation</label><br>
-					<input type="checkbox" id="conflict" value="conflict resolution" name="comm">
+					<input type="checkbox" id="conflict" value="verbal" name="comm">
 					<label for="conflict">Conflict resolution</label>
-
+                    
 				</td>
 			</tr>
 			<tr>
-				<td><label>Problem Solving <em>(Click to Select all skills)</em></label><input type="checkbox"
-						onClick="problem_solving(this)" /><br /></td>
+				<td><label>Problem Solving <em>(Click to Select all skills)</em></label><input type="checkbox" onclick="selectAll(this, 'problem')"><br/></td>
 				<td>
-					<input type="checkbox" id="critical" value="critical thinking" name="problem">
+					<input type="checkbox" id="critical" value="critical" name="problem">
 					<label for="critical">Critical thinking</label><br>
-					<input type="checkbox" id="analytical" value="analytical thinking" name="problem">
+					<input type="checkbox" id="analytical" value="analytical" name="problem">
 					<label for="analytical">Analytical thinking</label><br>
-					<input type="checkbox" id="decision" value="decision thinking" name="problem">
+					<input type="checkbox" id="decision" value="decision" name="problem">
 					<label for="decision">Decision-making</label><br>
-					<input type="checkbox" id="data" value="data analysis" name="problem">
+					<input type="checkbox" id="data" value="data" name="problem">
 					<label for="data">Data analysis</label><br>
-					<input type="checkbox" id="research" value="research skills" name="problem">
+					<input type="checkbox" id="research" value="research" name="problem">
 					<label for="research">Research skills</label><br>
+					<input type="checkbox" id="creative" value="creative" name="problem">
+					<label for="creative">Creative thinking</label><br>
 					<input type="checkbox" id="innovation" value="innovation" name="problem">
 					<label for="innovation">Innovation</label>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<label">Teamwork <em>(Click to Select all skills)</em></label><input type="checkbox"
-							onClick="teamwork(this)">
-				</td>
+				<td><label>Teamwork <em>(Click to Select all skills)</em></label><input type="checkbox" onclick="selectAll(this, 'teamwork')"><br></td>
 				<td>
 					<input type="checkbox" id="collaboration" value="collaboration" name="teamwork">
 					<label for="collaboration">Collaboration</label><br>
-					<input type="checkbox" id="building" value="team building" name="teamwork">
+					<input type="checkbox" id="building" value="building" name="teamwork">
 					<label for="building">Team building</label><br>
-					<input type="checkbox" id="conflict_res" value="conflict resolution" name="teamwork">
+					<input type="checkbox" id="conflict_res" value="conflict_res" name="teamwork">
 					<label for="conflict_res">Conflict resolution</label><br>
-					<input type="checkbox" id="consensus" value="consensus-building" name="teamwork">
+					<input type="checkbox" id="consensus" value="consensus" name="teamwork">
 					<label for="consensus">Consensus-building</label>
-				</td>
-			</tr>
-			<tr>
-				<td> <label>Technical Skills <em>(Click to Select all skills) </em></label><input type="checkbox"
-						onClick="technical(this)" name="technical"> <br /></td>
-				<td>
-					<input type="checkbox" id="programming" value="programming languages" name="technical">
-					<label for="programming">Programming languages</label><br>
-					<input type="checkbox" id="database" value="database management" name="technical">
-					<label for="database">Database management</label><br>
-					<input type="checkbox" id="networking" value="networking" name="technical">
-					<label for="networking">Networking</label><br>
-					<input type="checkbox" id="web" value="web development" name="technical">
-					<label for="web">Web development</label><br>
-					<input type="checkbox" id="mobile" value="mobile development" name="technical">
-					<label for="mobile">Mobile development</label><br>
-					<input type="checkbox" id="cloud" value="cloud computing" name="technical">
-					<label for="cloud">Cloud computing</label><br>
-					<input type="checkbox" id="cybersecurity" value="cybersecurity" name="technical">
-					<label for="cybersecurity">Cybersecurity</label>
-				</td>
-			</tr>
-			<tr>
-				<td><label>Soft Skills <em>(Click to Select all skills)</em></label><input type="checkbox"
-						onClick="soft(this)"><br /></td>
-				<td>
-					<input type="checkbox" id="leadership" value="leadership" name="soft">
-					<label for="leadership">Leadership</label><br>
-					<input type="checkbox" id="time" value="time management" name="soft">
-					<label for="time">Time management</label><br>
-					<input type="checkbox" id="adaptability" value="adaptability" name="soft">
-					<label for="adaptability">Adaptability</label><br>
-					<input type="checkbox" id="problem-solving_soft" value="problem solving" name="soft">
-					<label for="problem-solving_soft">Problem-solving</label><br>
-					<input type="checkbox" id="empathy" value="empathy" name="soft">
-					<label for="empathy">Empathy</label>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	<button type="submit" id = "btn">Submit</button>
-	</form>
+			</td>
+		</tr>
+		<tr>
+			<td> <label>Technical Skills <em>(Click to Select all skills)</em></label><input type="checkbox" onclick="selectAll(this, 'technical')"><br/></td>
+			<td>
+				<input type="checkbox" id="programming" value="programming" name="technical">
+				<label for="programming">Programming languages</label><br>
+				<input type="checkbox" id="database" value="database" name="technical">
+				<label for="database">Database management</label><br>
+				<input type="checkbox" id="networking" value="networking" name="technical">
+				<label for="networking">Networking</label><br>
+				<input type="checkbox" id="web" value="web" name="technical">
+				<label for="web">Web development</label><br>
+				<input type="checkbox" id="mobile" value="mobile" name="technical">
+				<label for="mobile">Mobile development</label><br>
+				<input type="checkbox" id="cloud" value="cloud" name="technical">
+				<label for="cloud">Cloud computing</label><br>
+				<input type="checkbox" id="cybersecurity" value="cybersecurity" name="technical">
+				<label for="cybersecurity">Cybersecurity</label>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Soft Skills <em>(Click to Select all skills)</em></label><input type="checkbox" onclick="selectAll(this, 'soft')"><br/></td>
+			<td>
+				<input type="checkbox" id="leadership" value="leadership" name="soft">
+				<label for="leadership">Leadership</label><br>
+				<input type="checkbox" id="time" value="time" name="soft">
+				<label for="time">Time management</label><br>
+				<input type="checkbox" id="adaptability" value="adaptability" name="soft">
+				<label for="adaptability">Adaptability</label><br>
+				<input type="checkbox" id="teamwork_soft" value="teamwork_soft" name="soft">
+				<label for="teamwork_soft">Teamwork</label><br>
+				<input type="checkbox" id="communication_soft" value="communication_soft" name="soft">
+				<label for="communication_soft">Communication</label><br>
+				<input type="checkbox" id="problem-solving_soft" value="problem-solving_soft" name="soft">
+				<label for="problem-solving_soft">Problem-solving</label><br>
+				<input type="checkbox" id="creativity" value="creativity" name="soft">
+				<label for="creativity">Creativity</label> <br>
+                <input type="checkbox" id="empathy" value="empathy" name="soft"> 
+				<label for="empathy">Empathy</label>
+			</td>
+		</tr>
+	</tbody>
 	
+</table>
+<input type="submit" value="Submit">
+	</form>
+
 	<div id="loading">
 		<div id="loading-message">
 			<h2>Loading...</h2>
 		</div>
-	</div>				
-					
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<script src="recommender.js"></script>
-</body>
+	</div>
 
+</body>
 </html>
