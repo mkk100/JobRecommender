@@ -19,6 +19,22 @@
 		th {
 			background-color: #f2f2f2;
 		}
+		#loading {
+    			display: none;
+    			position: fixed;
+   			z-index: 9999;  
+    			top: 0;
+    			left: 0;
+    			height: 100%;
+    			width: 100%;
+    			background-color: rgba(255, 255, 255, 0.8);
+	}
+	#loading-message {
+    		position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+	}
 	</style>
 	<script language="JavaScript">
 		function communication(source) {
@@ -36,7 +52,7 @@
 			}
 		}
 	</script>
-	</script>
+	
 	<script language="JavaScript">
 		function teamwork(source) {
 			checkboxes = document.getElementsByName('teamwork');
@@ -45,7 +61,7 @@
 			}
 		}
 	</script>
-	</script>
+	
 	<script language="JavaScript">
 		function technical(source) {
 			checkboxes = document.getElementsByName('technical');
@@ -54,7 +70,8 @@
 			}
 		}
 	</script>
-	</script>
+	
+	
 	<script language="JavaScript">
 		function soft(source) {
 			checkboxes = document.getElementsByName('soft');
@@ -63,10 +80,19 @@
 			}
 		}
 	</script>
+	
+	<script language="JavaScript">
+			function showLoadingMessage(){
+   			 document.getElementById("loading").style.display = "block";
+			}
+	</script>
+
+	
 </head>
 
 <body>
 	<h1>Skills Checklist</h1>
+	<form onSubmit="showLoadingMessage()">
 	<table>
 		<thead>
 			<tr>
@@ -164,8 +190,15 @@
 			</tr>
 		</tbody>
 	</table>
-	<button id = "btn">Submit</button>
-
+	<button type="submit" id = "btn">Submit</button>
+	</form>
+	
+	<div id="loading">
+		<div id="loading-message">
+			<h2>Loading...</h2>
+		</div>
+	</div>				
+					
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="recommender.js"></script>
 </body>
