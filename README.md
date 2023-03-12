@@ -58,6 +58,6 @@ Job Recommendar project is developed by:
 2. Min Kaung Khant (Web Developer) (https://github.com/mkk100)
 3. Thalynn Htet (Back-end Developer)
 4. Zeyar Htoo (Front-end Developer) (https://github.com/ZeyarHtoo)
-5. Alejandro Ceja Cruz (Front-end Developer) (https://github.com/Alets17)
+5. Alejandro Cruz Ceja (Front-end Developer) (https://github.com/Alets17)
 
 The project is inspired by: Career Navigator and Roadmap function from Project Management Institute (pmi.org)
