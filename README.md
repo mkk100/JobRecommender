@@ -52,7 +52,7 @@ Job Recommender is released under the MIT License. See the LICENSE file for deta
 
 Job Recommendar project is developed for Hack The Break 2023 event by:
 
-1. Kaung Khant Ko (Project Manager) 
+1. Kaung Khant Ko (Project Manager) (https://github.com/kaungkhantko)
 2. Min Kaung Khant (Web Developer) (https://github.com/mkk100)
 3. Thalynn Htet (Back-end Developer)
 4. Zeyar Htoo (Front-end Developer) (https://github.com/ZeyarHtoo)
