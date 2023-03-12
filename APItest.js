@@ -79,30 +79,3 @@ function get_job_pos(skills, interests) {
     return Promise.all(promises);
   });
 }
-
-function main() {
-  let skills, interests;
-  while (true) {
-    try {
-      let skills = prompt("Enter your top 3 skills, separated by commas:");
-      if (!skills) {
-        throw new Error("Skills cannot be empty.");
-      }
-      skills = skills.split(",").map(s => s.trim()).filter(Boolean);
-      if (skills.length < 3) {
-        throw new Error("Please provide at least 3 skills.");
-      }
-      let interests = prompt("Enter your top 3 interests, separated by commas:");
-      if (!interests) {
-        throw new Error("Interests cannot be empty.");
-      }
-      interests = interests.split(",").map(i => i.trim()).filter(Boolean);
-      if (interests.length < 3) {
-        throw new Error("Please provide at least 3 interests.");
-      }
-      get_job_pos(skills, interests);
-      break;
-    } catch (e) {
-      console.error(`Error: ${e}`);
-    }
-  }}
